@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<html manifest="phraffle.appcache">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<script type="text/javascript" src="http://use.typekit.com/hqs2kgo.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<meta name = "viewport" content = "user-scalable = no, width=700">
+<title>Phraffle</title>
+<style>
+body {
+	font-family:arial,verdana;
+	margin:0px;
+	padding:0px;
+	background: #0c2aef;
+}
+
+a {color:white;}
+.bd {text-align:center;}
+
+.hd {
+	text-align:center; 
+	color:white;
+	font-family: "bello-pro";
+	text-shadow: 2px 2px #353535;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=90, Color='#353535')";
+	font-size:76px;
+	margin-left: 0px; 
+	margin-right:0px;
+	margin-bottom: 10px;
+	padding-top:5%;
+}
+
+.outercontainer {
+   position:absolute;
+	height:100%;
+   width:100%;
+   background: #0c2aef;
+   /* Some day, we won't have to do this sillyness */
+   background-image: -ms-radial-gradient(center, circle farthest-corner, #19ABFF 0%, #0C2AEF 100%);
+   background-image: -moz-radial-gradient(center, circle farthest-corner, #19ABFF 0%, #0C2AEF 100%);
+   background-image: -o-radial-gradient(center, circle farthest-corner, #19ABFF 0%, #0C2AEF 100%);
+   background-image: -webkit-gradient(radial, center center, 0, center center, 484, color-stop(0, #19ABFF), color-stop(1, #0C2AEF));
+   background-image: -webkit-radial-gradient(center, circle farthest-corner, #19ABFF 0%, #0C2AEF 100%);
+   background-image: radial-gradient(center, circle farthest-corner, #19ABFF 0%, #0C2AEF 100%);
+   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#19ABFF', endColorstr='#0C2AEF');
+}
+
+.desc {text-align:center; color:white;font-size:12px;margin-bottom: 10px;}
+.instructions {width:600px; margin-left:auto; margin-right:auto; padding-top:30px; text-align:left; color:white;font-size:12px;margin-bottom: 10px;}
+.footer {text-align:center;color:white;font-size:12px; margin:20px;}
+.container {margin:0 auto;width:652px;}
+
+.slot-wrapper {
+	border: 1px solid #000000;
+	background: #cccccc;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #888888));
+	background-image: -moz-linear-gradient(top, #FFFFFF 0%, #888888 100%);
+	background-image: -o-linear-gradient(top, #FFFFFF 0%, #888888 100%);
+	background-image: linear-gradient(top, #FFFFFF 0%, #888888 100%);
+	background-image: -ms-linear-gradient(top, #FFFFFF 0%, #888888 100%);
+	border-radius: 0px;
+}
+
+.slot {
+	background:url("images/reel_normal_numbers.png") repeat-y; /*Taken from http://www.swish-designs.co.uk*/
+	width:86px;
+	height:70px;
+	float:left;
+	border:1px solid #aaa;
+	border-radius: 0px;
+	background-position:0 0px;
+}
+
+.slotstopped {border: 1px solid #000;}
+
+
+.slotx {
+	background:url("images/reel_x.png") repeat-y; /*Taken from http://www.swish-designs.co.uk*/
+	width:86px;
+	height:70px;
+	float:left;
+	border:0px solid #aaa;
+	background-position:0 0px;
+}
+
+.slotdash {
+	background:url("images/reel_dash.png") repeat-y; /*Taken from http://www.swish-designs.co.uk*/
+	width:40px;
+	height:70px;
+	float:left;
+	border:0px solid #aaa;
+	background-position:0 0px;
+}
+
+.motion {
+	background:url("images/reel_blur_numbers.png") repeat-y; /*Taken from http://www.swish-designs.co.uk*/
+}
+
+button {
+	display:block;
+	align: center;
+	width:138px;
+	height:33px;
+	margin:20px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size:14px;
+	border-radius: 15px;
+	cursor:pointer;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #888888));
+	background-image: -moz-linear-gradient(top, #FFFFFF 0%, #888888 100%);
+	background-image: -o-linear-gradient(top, #FFFFFF 0%, #888888 100%);
+	background-image: linear-gradient(top, #FFFFFF 0%, #888888 100%);
+	background-image: -ms-linear-gradient(top, #FFFFFF 0%, #888888 100%);
+
+}
+
+.clear {clear:both;}
+
+</style>
+<script src="jquery-1.7.2.min.js"></script>
+<script src="jquery.spritely.js"></script>
+<script src="jquery.backgroundPosition.js"></script>
+<script src="raffle.js"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31679804-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body>
+<div class="outercontainer">
+<!--<div class="hd"><small><small><small>Phone + Raffle = </small></small></small>Phraffle!</div>-->
+<div class="hd">Phraffle!</div>
+<div class="desc">Create an instant raffle using mobile phone numbers as raffle tickets</div>
+<div class="bd">
+	<div class="container">
+		<div class="slot-wrapper">
+			<div id="slotx" class="slotx"></div>
+			<div id="slotx" class="slotx"></div>
+			<div id="slotx" class="slotx"></div>
+			<div id="slotdash" class="slotdash"></div>
+			<div id="slot1" class="slot"></div>
+			<div id="slot2" class="slot"></div>
+			<div id="slot3" class="slot"></div>
+			<div id="slot4" class="slot"></div>
+			<div class="clear"></div>
+		</div>
+<!--		<div><button id="control">Reset</button></div>-->
+	</div>
+	<div class="instructions">
+	<center><b><u>Suggested Instructions for Audience Giveaways</u></b></center>
+	<ul>
+		<li>Have everyone stand up. 
+		<li>Tell audience to remain standing only while their phone number matches the pattern.
+		<li>Click/Tap the last digit to make it stop spinning.  90% of the audience should now be seated.
+		<li>Click/Tap the next digit and see if anyone is left standing.  If not, re-spin it and try again.
+		<li>Last person standing wins.  
+		<li>With an audience of 100 people, it typically works between 2 to 4 clicks.
+		<li>Audiences of more than 10,000 people require an enterprise license. Cost=$20k -- PayPal accepted ;-)
+	</ul>
+	</div>
+	<div class="footer">
+	<a href="http://gregsramblings.com">http://gregsramblings.com</a><br><br><br>
+	<a href="https://twitter.com/share" class="twitter-share-button" data-text="Phraffle - instant raffle using the audience's mobile phones" data-via="gregsramblings" data-count="none">Tweet</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+	<!-- Place this tag where you want the +1 button to render -->
+	<g:plusone annotation="none"></g:plusone>
+
+	<!-- Place this render call where appropriate -->
+	<script type="text/javascript">
+	(function() {
+		var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		po.src = 'https://apis.google.com/js/plusone.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	})();
+	</script>
+	</div>
+</div>
+</div>
+</body>
+</html>
