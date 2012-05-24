@@ -10,7 +10,8 @@ Suggested Instructions for Audience Giveaways
 	Click/Tap the next digit and see if anyone is left standing. If not, re-spin it and try again.
 	Last person standing wins.
 	With an audience of 100 people, it typically works between 2 to 4 clicks.
-	Audiences of more than 10,000 people require an enterprise license. Cost=$20k -- PayPal accepted ;-)
 
-Blog post -- http://gregsramblings.com/2012/05/13/an-interesting-way-to-handle-event-giveaways-phraffle-com/
+Blog post describing app -- http://gregsramblings.com/2012/05/13/an-interesting-way-to-handle-event-giveaways-phraffle-com/
+Blog post describing app cache usage and offline use -- (comingsoon)
+
 
