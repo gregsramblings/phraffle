@@ -15,6 +15,19 @@
 			lifespan: 3000
 	};
 
+	// If the user is online, do the google analytics thing
+	if(navigator.onLine) {
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-31679804-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+		console.log("ONLINE");
+	}
 </script>
 
 <script type="text/javascript" src="add2home.js"></script>
@@ -78,7 +91,7 @@ a {color:white;}
 }
 
 .slot {
-	background:url("images/reel_normal_numbers.png") repeat-y; /*Taken from http://www.swish-designs.co.uk*/
+	background:url("images/reel_normal_numbers.png") repeat-y;
 	width:86px;
 	height:70px;
 	float:left;
@@ -91,7 +104,7 @@ a {color:white;}
 
 
 .slotx {
-	background:url("images/reel_x.png") repeat-y; /*Taken from http://www.swish-designs.co.uk*/
+	background:url("images/reel_x.png") repeat-y;
 	width:86px;
 	height:70px;
 	float:left;
@@ -100,7 +113,7 @@ a {color:white;}
 }
 
 .slotdash {
-	background:url("images/reel_dash.png") repeat-y; /*Taken from http://www.swish-designs.co.uk*/
+	background:url("images/reel_dash.png") repeat-y;
 	width:40px;
 	height:70px;
 	float:left;
@@ -109,7 +122,7 @@ a {color:white;}
 }
 
 .motion {
-	background:url("images/reel_blur_numbers.png") repeat-y; /*Taken from http://www.swish-designs.co.uk*/
+	background:url("images/reel_blur_numbers.png") repeat-y;
 }
 
 button {
