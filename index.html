@@ -2,10 +2,24 @@
 <html manifest="phraffle.appcache">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name = "viewport" content = "user-scalable = yes, width = 700">
+<link rel="apple-touch-icon" href="icon57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="icon72.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="icon144.png" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
-<script type="text/javascript" src="http://use.typekit.com/hqs2kgo.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-<meta name = "viewport" content = "user-scalable=yes, width=700">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<script type="text/javascript">
+	var addToHomeConfig = {
+			message:'Install Phraffle on your home screen<br>Tap %icon and then <strong>&quot;Add to Home Screen&quot;.',
+			lifespan: 3000
+	};
+
+</script>
+
+<script type="text/javascript" src="add2home.js"></script>
+
+<link rel="stylesheet" href="add2home.css">
 <title>Phraffle</title>
 <style>
 body {
@@ -32,18 +46,18 @@ a {color:white;}
 }
 
 .outercontainer {
-   position:absolute;
+	position:absolute;
 	height:100%;
-   width:100%;
-   background: #0c2aef;
-   /* Some day, we won't have to do this sillyness */
-   background-image: -ms-radial-gradient(center, circle farthest-corner, #19ABFF 0%, #0C2AEF 100%);
-   background-image: -moz-radial-gradient(center, circle farthest-corner, #19ABFF 0%, #0C2AEF 100%);
-   background-image: -o-radial-gradient(center, circle farthest-corner, #19ABFF 0%, #0C2AEF 100%);
-   background-image: -webkit-gradient(radial, center center, 0, center center, 484, color-stop(0, #19ABFF), color-stop(1, #0C2AEF));
-   background-image: -webkit-radial-gradient(center, circle farthest-corner, #19ABFF 0%, #0C2AEF 100%);
-   background-image: radial-gradient(center, circle farthest-corner, #19ABFF 0%, #0C2AEF 100%);
-   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#19ABFF', endColorstr='#0C2AEF');
+	width:100%;
+	background: #0c2aef;
+	/* Some day, we won't have to do this sillyness */
+	background-image: -ms-radial-gradient(center, circle farthest-corner, #19ABFF 0%, #0C2AEF 100%);
+	background-image: -moz-radial-gradient(center, circle farthest-corner, #19ABFF 0%, #0C2AEF 100%);
+	background-image: -o-radial-gradient(center, circle farthest-corner, #19ABFF 0%, #0C2AEF 100%);
+	background-image: -webkit-gradient(radial, center center, 0, center center, 484, color-stop(0, #19ABFF), color-stop(1, #0C2AEF));
+	background-image: -webkit-radial-gradient(center, circle farthest-corner, #19ABFF 0%, #0C2AEF 100%);
+	background-image: radial-gradient(center, circle farthest-corner, #19ABFF 0%, #0C2AEF 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#19ABFF', endColorstr='#0C2AEF');
 }
 
 .desc {text-align:center; color:white;font-size:12px;margin-bottom: 10px;}
@@ -52,6 +66,7 @@ a {color:white;}
 .container {margin:0 auto;width:652px;}
 
 .slot-wrapper {
+	width:650px;
 	border: 1px solid #000000;
 	background: #cccccc;
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #888888));
@@ -123,24 +138,10 @@ button {
 <script src="jquery.spritely.js"></script>
 <script src="jquery.backgroundPosition.js"></script>
 <script src="raffle.js"></script>
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-31679804-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
 </head>
 
 <body>
 <div class="outercontainer">
-<!--<div class="hd"><small><small><small>Phone + Raffle = </small></small></small>Phraffle!</div>-->
 <div class="hd">Phraffle!</div>
 <div class="desc">Create an instant raffle using mobile phone numbers as raffle tickets</div>
 <div class="bd">
@@ -172,20 +173,6 @@ button {
 	</div>
 	<div class="footer">
 	<a href="http://gregsramblings.com">http://gregsramblings.com</a><br><br><br>
-	<a href="https://twitter.com/share" class="twitter-share-button" data-text="Phraffle - instant raffle using the audience's mobile phones" data-via="gregsramblings" data-count="none">Tweet</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-	<!-- Place this tag where you want the +1 button to render -->
-	<g:plusone annotation="none"></g:plusone>
-
-	<!-- Place this render call where appropriate -->
-	<script type="text/javascript">
-	(function() {
-		var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-		po.src = 'https://apis.google.com/js/plusone.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-	})();
-	</script>
 	</div>
 </div>
 </div>

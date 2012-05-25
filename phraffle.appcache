@@ -1,17 +1,24 @@
 CACHE MANIFEST
+# ver 1.13
 
-# Version 1.5
+NETWORK:
+*
+http://*
+https://*
 
+# The following files are explicitly cached -
 CACHE:
 index.html
 jquery-1.7.2.min.js
 jquery.backgroundPosition.js
 jquery.spritely.js
 raffle.js
+add2home.js
+add2home.css
+images/reel_x.png
 images/reel_blur_numbers.png
 images/reel_blur.png
 images/reel_dash.png
 images/reel_normal_numbers.png
 images/reel_normal.png
 images/reel_normal.psd
-images/reel_x.png
