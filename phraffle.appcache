@@ -1,10 +1,10 @@
 CACHE MANIFEST
-# ver 1.20
+# Ver 1.02
 
+# Add the entire internet to the "white list" of sites that may be accessed by this site.
+# This is needed for TypeKit and Google Analytics
 NETWORK:
 *
-http://*
-https://*
 
 # The following files are explicitly cached -
 CACHE:
