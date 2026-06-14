@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Phraffle">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="80%">
+      <stop offset="0" stop-color="#19abff"/>
+      <stop offset="1" stop-color="#0c2aef"/>
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <text x="32" y="45" text-anchor="middle"
+        font-family="'Trebuchet MS', Verdana, Arial, sans-serif"
+        font-weight="900" font-size="40" fill="#ffffff">P</text>
+</svg>

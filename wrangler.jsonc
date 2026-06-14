@@ -1,0 +1,9 @@
+{
+  // Phraffle — static site deployed as a Workers Static Assets (assets-only) Worker.
+  // No server-side code: wrangler serves the files in this directory directly.
+  "name": "phraffle",
+  "compatibility_date": "2026-06-12",
+  "assets": {
+    "directory": "."
+  }
+}

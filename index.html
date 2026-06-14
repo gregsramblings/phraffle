@@ -1,193 +1,293 @@
-<!DOCTYPE HTML>
-<html manifest="phraffle.appcache">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name = "viewport" content = "user-scalable = yes, width = 700">
-<link rel="apple-touch-icon" href="icon57.png" />
-<link rel="apple-touch-icon" sizes="72x72" href="icon72.png" />
-<link rel="apple-touch-icon" sizes="114x114" href="icon144.png" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>Phraffle — instant phone-number raffles for live giveaways</title>
+<meta name="description" content="Instant raffles where everyone's already holding a ticket — the last four digits of their phone. Run a live audience giveaway in seconds, with no sign-ups.">
+<meta name="author" content="Greg Wilson">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://phraffle.com/">
+<meta name="theme-color" content="#0c2aef">
+
+<!-- Icons / favicon -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" sizes="64x64" type="image/png">
+<link rel="apple-touch-icon" href="icon57.png">
+<link rel="apple-touch-icon" sizes="72x72" href="icon72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="icon144.png">
+
+<!-- Add-to-home-screen -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
-<script type="text/javascript" src="http://use.typekit.com/hqs2kgo.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<meta name="apple-mobile-web-app-title" content="Phraffle">
 
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Phraffle">
+<meta property="og:title" content="Phraffle — instant phone-number raffles">
+<meta property="og:description" content="Everyone's already holding a ticket — the last four digits of their phone. Run a live audience giveaway in seconds.">
+<meta property="og:url" content="https://phraffle.com/">
+<meta property="og:image" content="https://phraffle.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Phraffle — a slot machine showing the last four digits of a phone number.">
 
-<script type="text/javascript">
-	var addToHomeConfig = {
-			message:'Install Phraffle on your home screen<br>Tap %icon and then <strong>&quot;Add to Home Screen&quot;.',
-			lifespan: 3500
-	};
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Phraffle — instant phone-number raffles">
+<meta name="twitter:description" content="Everyone's already holding a ticket — the last four digits of their phone. Run a live audience giveaway in seconds.">
+<meta name="twitter:image" content="https://phraffle.com/og-image.png">
 
-	var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', 'UA-31679804-1']);
-	_gaq.push(['_trackPageview']);
-
-	(function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	})();
-		
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Phraffle",
+  "url": "https://phraffle.com/",
+  "description": "Instant raffles that use the last four digits of phone numbers as tickets — run a live audience giveaway in seconds.",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Any modern web browser",
+  "browserRequirements": "Requires JavaScript",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Person", "name": "Greg Wilson", "url": "https://gregwilson.tech" }
+}
 </script>
 
-<script type="text/javascript" src="add2home.js"></script>
-
-<link rel="stylesheet" href="add2home.css">
-<title>Phraffle</title>
 <style>
+/* ---- Self-hosted fonts (no external requests) ---- */
+@font-face {
+	font-family: 'Pacifico';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('fonts/pacifico-v23-latin.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Nunito';
+	font-style: normal;
+	font-weight: 400 800; /* variable font */
+	font-display: swap;
+	src: url('fonts/nunito-v32-latin.woff2') format('woff2');
+}
+
+:root {
+	--ink: #ffffff;
+	--ink-soft: rgba(255, 255, 255, 0.82);
+	--gold: #ffd54a;
+	--panel: rgba(4, 18, 60, 0.30);
+	--panel-border: rgba(255, 255, 255, 0.18);
+}
+
+html, body { height: 100%; }
+
 body {
-	font-family:arial,verdana;
-	margin:0px;
-	padding:0px;
+	margin: 0;
+	padding: 0;
+	color: var(--ink);
+	font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 	background: #0c2aef;
+	background-image: radial-gradient(circle farthest-corner at center, #19abff 0%, #0c2aef 100%);
 }
 
-a {color:white;}
-.bd {text-align:center;}
-
-.hd {
-	text-align:center; 
-	color:white;
-	font-family: "bello-pro";
-	text-shadow: 2px 2px #353535;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=90, Color='#353535')";
-	font-size:76px;
-	margin-left: 0px; 
-	margin-right:0px;
-	margin-bottom: 10px;
-	padding-top:5%;
+a {
+	color: var(--ink);
+	text-decoration: none;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+	transition: border-color 0.15s ease;
 }
+a:hover { border-color: #fff; }
+a:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 2px; }
 
 .outercontainer {
-	position:absolute;
-	height:100%;
-	width:100%;
-	background: #0c2aef;
-	/* Some day, we won't have to do this sillyness */
-	background-image: -ms-radial-gradient(center, circle farthest-corner, #19ABFF 0%, #0C2AEF 100%);
-	background-image: -moz-radial-gradient(center, circle farthest-corner, #19ABFF 0%, #0C2AEF 100%);
-	background-image: -o-radial-gradient(center, circle farthest-corner, #19ABFF 0%, #0C2AEF 100%);
-	background-image: -webkit-gradient(radial, center center, 0, center center, 484, color-stop(0, #19ABFF), color-stop(1, #0C2AEF));
-	background-image: -webkit-radial-gradient(center, circle farthest-corner, #19ABFF 0%, #0C2AEF 100%);
-	background-image: radial-gradient(center, circle farthest-corner, #19ABFF 0%, #0C2AEF 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#19ABFF', endColorstr='#0C2AEF');
+	box-sizing: border-box;
+	min-height: 100%;
+	/* Keep content clear of notches / Dynamic Island in home-screen mode. */
+	padding-top: env(safe-area-inset-top, 0px);
+	padding-right: env(safe-area-inset-right, 0px);
+	padding-bottom: calc(28px + env(safe-area-inset-bottom, 0px));
+	padding-left: env(safe-area-inset-left, 0px);
 }
 
-.desc {text-align:center; color:white;font-size:12px;margin-bottom: 10px;}
-.instructions {width:600px; margin-left:auto; margin-right:auto; padding-top:30px; text-align:left; color:white;font-size:12px;margin-bottom: 10px;}
-.footer {text-align:center;color:white;font-size:12px; margin:20px;}
-.container {margin:0 auto;width:652px;}
+.hd {
+	text-align: center;
+	color: #fff;
+	font-family: 'Pacifico', 'Brush Script MT', cursive;
+	font-weight: 400;
+	font-size: clamp(52px, 13vw, 88px);
+	line-height: 1.2;
+	margin: 0 0 clamp(16px, 3.5vh, 28px);
+	padding-top: clamp(18px, 5vh, 48px);
+	text-shadow: 0 2px 0 #1b3bd0, 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.desc {
+	text-align: center;
+	font-size: clamp(15px, 2.6vw, 20px);
+	font-weight: 600;
+	color: var(--ink);
+	margin: 0 auto 22px;
+	padding: 0 20px;
+	max-width: 640px;
+	text-wrap: balance;
+}
+
+.bd { text-align: center; padding: 0 16px; }
+
+/* ---- Slot machine ---- */
+/* Scales the fixed-size sprite layout down to fit narrow screens. */
+.machine-wrap {
+	width: 100%;
+	overflow: hidden;
+	text-align: left; /* machine is positioned via JS translateX; don't inherit .bd centering */
+}
+
+.machine {
+	display: inline-block;
+	transform-origin: top left;
+}
 
 .slot-wrapper {
-	width:650px;
-	border: 1px solid #000000;
-	background: #cccccc;
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #888888));
-	background-image: -moz-linear-gradient(top, #FFFFFF 0%, #888888 100%);
-	background-image: -o-linear-gradient(top, #FFFFFF 0%, #888888 100%);
-	background-image: linear-gradient(top, #FFFFFF 0%, #888888 100%);
-	background-image: -ms-linear-gradient(top, #FFFFFF 0%, #888888 100%);
-	border-radius: 0px;
+	display: flex;
+	width: 650px;
+	border: 1px solid #000;
+	border-radius: 10px;
+	overflow: hidden;
+	background: #ccc;
+	background-image: linear-gradient(to bottom, #fff 0%, #888 100%);
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), inset 0 2px 0 rgba(255, 255, 255, 0.55);
+}
+
+.slot,
+.slotx,
+.slotdash {
+	height: 70px;
+	background-repeat: repeat-y;
+	background-position: 0 0;
+	flex: 0 0 auto;
 }
 
 .slot {
-	background:url("images/reel_normal_numbers.png") repeat-y;
-	width:86px;
-	height:70px;
-	float:left;
-	border:1px solid #aaa;
-	border-radius: 0px;
-	background-position:0 0px;
+	width: 86px;
+	border: 1px solid #aaa;
+	background-image: url("images/reel_normal_numbers.png");
+	cursor: pointer;
+	touch-action: manipulation;
+	user-select: none;
+	-webkit-user-select: none;
 }
 
-.slotstopped {border: 1px solid #000;}
-
-
-.slotx {
-	background:url("images/reel_x.png") repeat-y;
-	width:86px;
-	height:70px;
-	float:left;
-	border:0px solid #aaa;
-	background-position:0 0px;
+.slot:focus-visible {
+	/* inset box-shadow instead of negative outline-offset — renders reliably
+	   on iOS Safari, where negative offsets can be clipped. */
+	outline: none;
+	box-shadow: inset 0 0 0 3px var(--gold);
 }
 
-.slotdash {
-	background:url("images/reel_dash.png") repeat-y;
-	width:40px;
-	height:70px;
-	float:left;
-	border:0px solid #aaa;
-	background-position:0 0px;
+.slot.motion { background-image: url("images/reel_blur_numbers.png"); }
+.slotstopped { border-color: #000; }
+.slotx { width: 86px; background-image: url("images/reel_x.png"); }
+.slotdash { width: 40px; background-image: url("images/reel_dash.png"); }
+
+.hint {
+	text-align: center;
+	font-size: 12px;
+	font-weight: 800;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--ink-soft);
+	margin: 16px 0 0;
 }
 
-.motion {
-	background:url("images/reel_blur_numbers.png") repeat-y;
+/* ---- Instructions panel ---- */
+.instructions {
+	box-sizing: border-box;
+	max-width: 600px;
+	margin: 34px auto 0;
+	padding: 26px 30px;
+	text-align: left;
+	font-size: 15px;
+	line-height: 1.65;
+	background: var(--panel);
+	border: 1px solid var(--panel-border);
+	border-radius: 18px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+	-webkit-backdrop-filter: blur(6px);
+	backdrop-filter: blur(6px);
 }
 
-button {
-	display:block;
-	align: center;
-	width:138px;
-	height:33px;
-	margin:20px;
-	margin-left: auto;
-	margin-right: auto;
-	font-size:14px;
-	border-radius: 15px;
-	cursor:pointer;
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #888888));
-	background-image: -moz-linear-gradient(top, #FFFFFF 0%, #888888 100%);
-	background-image: -o-linear-gradient(top, #FFFFFF 0%, #888888 100%);
-	background-image: linear-gradient(top, #FFFFFF 0%, #888888 100%);
-	background-image: -ms-linear-gradient(top, #FFFFFF 0%, #888888 100%);
-
+.instructions h2 {
+	margin: 0 0 16px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: 800;
+	color: var(--gold);
 }
 
-.clear {clear:both;}
+.instructions ol { margin: 0; padding-left: 24px; }
+.instructions li { margin-bottom: 10px; padding-left: 4px; }
+.instructions li::marker { color: var(--gold); font-weight: 800; }
 
+.instructions .note { margin: 16px 0 0; font-size: 0.95em; color: var(--ink-soft); }
+.instructions .aside { margin: 10px 0 0; font-size: 0.9em; font-style: italic; opacity: 0.7; }
+
+.footer {
+	text-align: center;
+	font-size: 13px;
+	margin: 26px 20px 0;
+	color: var(--ink-soft);
+}
 </style>
-<script src="jquery-1.7.2.min.js"></script>
-<script src="jquery.spritely.js"></script>
-<script src="jquery.backgroundPosition.js"></script>
-<script src="raffle.js"></script>
 </head>
 
 <body>
 <div class="outercontainer">
-<div class="hd">Phraffle!</div>
-<div class="desc">Create an instant raffle using mobile phone numbers as raffle tickets</div>
-<div class="bd">
-	<div class="container">
-		<div class="slot-wrapper">
-			<div id="slotx" class="slotx"></div>
-			<div id="slotx" class="slotx"></div>
-			<div id="slotx" class="slotx"></div>
-			<div id="slotdash" class="slotdash"></div>
-			<div id="slot1" class="slot"></div>
-			<div id="slot2" class="slot"></div>
-			<div id="slot3" class="slot"></div>
-			<div id="slot4" class="slot"></div>
-			<div class="clear"></div>
+	<h1 class="hd">Phraffle!</h1>
+	<p class="desc">Instant raffles where everyone's already holding a ticket — it's the last four digits of their phone.</p>
+	<div class="bd">
+		<div class="machine-wrap">
+			<div class="machine">
+				<div class="slot-wrapper">
+					<div class="slotx" aria-hidden="true"></div>
+					<div class="slotx" aria-hidden="true"></div>
+					<div class="slotx" aria-hidden="true"></div>
+					<div class="slotdash" aria-hidden="true"></div>
+					<div id="slot1" class="slot" role="button" tabindex="0" aria-label="Number reel — tap to spin or stop"></div>
+					<div id="slot2" class="slot" role="button" tabindex="0" aria-label="Number reel — tap to spin or stop"></div>
+					<div id="slot3" class="slot" role="button" tabindex="0" aria-label="Number reel — tap to spin or stop"></div>
+					<div id="slot4" class="slot" role="button" tabindex="0" aria-label="Number reel — tap to spin or stop"></div>
+				</div>
+			</div>
 		</div>
-<!--		<div><button id="control">Reset</button></div>-->
-	</div>
-	<div class="instructions">
-	<center><b>Suggested Instructions for Audience Giveaways</b></center>
-	<ul>
-		<li>Have everyone in the audience stand up
-		<li>Tell the audience to remain standing while their phone number matches the pattern
-		<li>Click/Tap the last digit to make it stop spinning.  90% of the audience should now be seated
-		<li>Click/Tap the next digit and see if anyone is left standing.  If not, re-spin it and try again
-		<li>The last person standing wins
-		<li>With an audience of 100 people, it typically works between 2 to 4 clicks to narrow it to one winner
-		<li>Audiences of more than 10,000 people require an enterprise license. Cost=$20k -- Venmo accepted ;-)
-	</ul>
-	</div>
-	<div class="footer">
-	<a href="https://gregsramblings.com">https://gregsramblings.com</a><br><br><br>
+
+		<p class="hint">Tap a reel to stop it</p>
+
+		<div class="instructions">
+			<h2>How to run a giveaway</h2>
+			<ol>
+				<li>Get the whole room to stand up.</li>
+				<li>The reels show the last four digits of a phone number. Everyone stays standing only while the digits match their own.</li>
+				<li>Tap the right-hand reel to stop it — about 90% of the room should sit down.</li>
+				<li>Tap the next reel to its left. If nobody's left standing, spin it again and retry.</li>
+				<li>Last person standing wins.</li>
+			</ol>
+			<p class="note">In a room of 100, it usually takes 2–4 taps to land on one winner.</p>
+			<p class="aside">Crowds over 10,000 need an enterprise license: $20k, Venmo accepted 😉</p>
+		</div>
+
+		<div class="footer">
+			<a href="https://gregwilson.tech">https://gregwilson.tech</a>
+		</div>
 	</div>
 </div>
-</div>
+
+<script src="raffle.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,22 @@
+# Files that must NOT be served as part of the deployed site.
+# gitignore-style syntax; this file lives in the assets directory.
+
+# Repo internals / local tooling
+.git/
+.gitignore
+.claude/
+.wrangler/
+node_modules/
+.dev.vars
+.DS_Store
+**/.DS_Store
+
+# Config & docs (not web assets)
+README.md
+wrangler.jsonc
+.assetsignore
+
+# Design sources (large, not part of the site)
+assets/
+**/*.psd
+fonts/README.txt

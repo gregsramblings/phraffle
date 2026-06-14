@@ -1,0 +1,8 @@
+# Local tooling / build state
+.claude/
+.wrangler/
+node_modules/
+
+# OS junk
+.DS_Store
+**/.DS_Store
